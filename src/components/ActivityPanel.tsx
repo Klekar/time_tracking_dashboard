@@ -29,7 +29,7 @@ export const SActivityPanel = styled(ActivityPanel).attrs<PanelProps>(() => ({})
         background-color: ${props => props.theme.colors.desaturated}
     }
 `
-//this hover will not work on Firefox unless it get "has()" selector implemented
+//this hover will not work in Firefox unless it gets "has()" selector implemented
 
 const InnerPanel = styled.div`
     background-color: hsl(235, 46%, 20%);
@@ -64,6 +64,7 @@ const Ellipsis = styled.img`
     float: right;
     cursor: pointer;
     justify-self: end;
+    padding-block: 0.5em;
 
     &:hover {
         filter: contrast(5);
