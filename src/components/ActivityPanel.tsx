@@ -2,9 +2,10 @@ import styled from "styled-components";
 import { Activity, Timescale } from "../types/Activity";
 import ellipsis from "../images/icon-ellipsis.svg"
 import { devices } from "../styledComponents/devices";
+import SkeletonableElement from "./SkeletonableElement";
 
 interface ActivityPanelProps {
-    activity: Activity,
+    activity: Activity | null,
     timescale: Timescale
 }
 
@@ -44,6 +45,7 @@ const InnerPanel = styled.div`
     display: grid;
     grid-template-rows: auto auto;
     grid-template-columns: auto auto;
+    grid-row-gap: 0.1em;
     align-content: space-between;
     justify-content: space-between;
     align-items: center;
@@ -93,16 +95,24 @@ export default function ActivityPanel(props: ActivityPanelProps) {
 
     return <div {...restProps}>
         <InnerPanel>
-            <ActivityTitle>{activity.title}</ActivityTitle>
-            {<Ellipsis src={ellipsis} className="button" />}
-            <CurrentHrs>{activity.timeframes[timescale].current}hrs</CurrentHrs>
+            <ActivityTitle>
+                <SkeletonableElement>{activity?.title}</SkeletonableElement>
+            </ActivityTitle>
+            <Ellipsis src={ellipsis} className="button" />
+            <CurrentHrs>
+                <SkeletonableElement loaded={activity !== undefined}>
+                    {activity?.timeframes[timescale].current}hrs
+                </SkeletonableElement>
+            </CurrentHrs>
             <LastHrs>
-                {timescale === "daily" ? "Yesterday"
-                    : timescale === "weekly" ? "Last Week"
-                        : "Last Month"
-                }
-                 - 
-                {activity.timeframes[timescale].previous}hrs
+                <SkeletonableElement loaded={activity !== undefined}>
+                    {timescale === "daily" ? "Yesterday"
+                        : timescale === "weekly" ? "Last Week"
+                            : "Last Month"
+                    }
+                    -
+                    {activity?.timeframes[timescale].previous}hrs
+                </SkeletonableElement>
             </LastHrs>
         </InnerPanel>
     </div>

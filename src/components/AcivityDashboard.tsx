@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import fetchData from "../data/GetData"
 import { Activity, Timescale } from "../types/Activity"
-import ActivityPanel, { SActivityPanel } from "./ActivityPanel"
+import { SActivityPanel } from "./ActivityPanel"
 import styled from "styled-components"
 import LeftDashboardPanel from "./LeftDashboardPanel"
 import { devices } from "../styledComponents/devices"
@@ -24,7 +24,7 @@ const Dashboard = styled.div`
 `
 
 export default function AcivityDashboard() {
-    const [data, setData] = useState<Activity[]>()
+    const [data, setData] = useState<(Activity | null)[]>(Array.from(Array(6)))
     const [timescale, setTimescale] = useState<Timescale>("daily")
 
     useEffect(() => {
@@ -33,20 +33,16 @@ export default function AcivityDashboard() {
         })
     }, [])
 
-    if (data === undefined) {
-        return <div>loading...</div>
-    }
-
     return <Dashboard>
         <LeftDashboardPanel setTimescale={setTimescale} timescale={timescale} />
 
-        {data.map(activity => <SActivityPanel
+        {data.map((activity, i) => <SActivityPanel
             activity={activity}
             timescale={timescale}
-            key={activity.title}
-            $backgroundColor={activityMap[activity.title].bgColor}
-            $backgroundIcon={`url(./images/${activityMap[activity.title].bgIcon})`}
-            $backgroundPositionY={activityMap[activity.title].bgPositionY}
+            key={i}
+            $backgroundColor={activityMap[activity?.title ?? "default"].bgColor}
+            $backgroundIcon={`url(./images/${activityMap[activity?.title ?? "default"].bgIcon})`}
+            $backgroundPositionY={activityMap[activity?.title ?? "default"].bgPositionY}
         />)}
     </Dashboard>
 }
@@ -58,6 +54,10 @@ const activityMap: {
         bgPositionY?: string
     }
 } = {
+    "default": {
+        bgColor: "#555",
+        bgIcon: ""
+    },
     "Work": {
         bgColor: "hsl(15, 100%, 70%)",
         bgIcon: "icon-work.svg",

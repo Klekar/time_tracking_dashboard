@@ -106,7 +106,7 @@ const data = [
 ]
 
 export default async function fetchData(): Promise<Activity[]> {
-    const randomWaitTime = Math.random() * 2000
+    const randomWaitTime = Math.random() * 2000 + 1000
     const promise = new Promise<Activity[]>((resolve) => {
         setTimeout(() => {
             resolve(data)

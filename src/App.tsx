@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import AcivityDashboard from './components/AcivityDashboard';
 import { ThemeProvider, styled } from 'styled-components';
