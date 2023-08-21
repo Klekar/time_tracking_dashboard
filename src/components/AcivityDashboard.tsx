@@ -11,7 +11,7 @@ const Dashboard = styled.div`
     display: grid;
     width: 320px;
     grid-gap: 1.4em;
-    padding: 4em;
+    padding-block: 4em;
 
 
     @media ${devices.desktop} {

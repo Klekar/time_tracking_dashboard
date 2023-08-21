@@ -19,6 +19,7 @@ const Attribution = styled.footer`
     bottom: 0;
     color: white;
     font-size: 0.8rem;
+    text-align: center;
 
     a {
         color: ${props => props.theme.colors.desaturated}
