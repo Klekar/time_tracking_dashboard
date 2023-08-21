@@ -51,7 +51,7 @@ const activityMap: {
     [title: string]: {
         bgColor: string,
         bgIcon: string,
-        bgPositionY?: string
+        bgPositionY?: number
     }
 } = {
     "default": {
@@ -65,7 +65,7 @@ const activityMap: {
     "Play": {
         bgColor: "hsl(195, 74%, 62%)",
         bgIcon: "icon-play.svg",
-        bgPositionY: "-5%"
+        bgPositionY: -5
     },
     "Study": {
         bgColor: "hsl(348, 100%, 68%)",
@@ -74,16 +74,16 @@ const activityMap: {
     "Exercise": {
         bgColor: "hsl(145, 58%, 55%)",
         bgIcon: "icon-exercise.svg",
-        bgPositionY: "-1%"
+        bgPositionY: -1
     },
     "Social": {
         bgColor: "hsl(264, 64%, 52%)",
         bgIcon: "icon-social.svg",
-        bgPositionY: "-12%"
+        bgPositionY: -12
     },
     "Self Care": {
         bgColor: "hsl(43, 84%, 65%)",
         bgIcon: "icon-self-care.svg",
-        bgPositionY: "-8%"
+        bgPositionY: -8
     }
 }

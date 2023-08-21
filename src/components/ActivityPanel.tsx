@@ -12,7 +12,7 @@ interface ActivityPanelProps {
 interface PanelProps {
     readonly $backgroundColor: string,
     readonly $backgroundIcon: string,
-    readonly $backgroundPositionY?: string
+    readonly $backgroundPositionY?: number
 }
 
 export const SActivityPanel = styled(ActivityPanel).attrs<PanelProps>(() => ({})) <PanelProps>`
@@ -23,11 +23,15 @@ export const SActivityPanel = styled(ActivityPanel).attrs<PanelProps>(() => ({})
     background-color: ${props => props.$backgroundColor};
     background-image: ${props => props.$backgroundIcon};
     background-repeat: no-repeat;
-    background-position: 86% ${props => props.$backgroundPositionY ?? "-6%"};
+    background-position: 86% ${props => (props.$backgroundPositionY ?? -6) - 16 + "%"};
     cursor: pointer;
 
     &:hover>div:not(:has(.button:hover)) {
         background-color: ${props => props.theme.colors.desaturated}
+    }
+    
+    @media ${devices.desktop} {
+        background-position: 86% ${props => (props.$backgroundPositionY ?? -6) + "%"};
     }
 `
 //this hover will not work in Firefox unless it gets "has()" selector implemented
@@ -36,8 +40,8 @@ const InnerPanel = styled.div`
     background-color: hsl(235, 46%, 20%);
     border-radius: 1em;
     position: relative;
-    top: 18%;
-    height: 82%;
+    height: 74%;
+    top: 26%;
     float: left;
     width: 100%;
     padding: 1.8em 2em 3.2em;
@@ -53,6 +57,8 @@ const InnerPanel = styled.div`
     
     @media ${devices.desktop} {
         padding: 1.8em 2em;
+        height: 82%;
+        top: 18%;
     }
 `
 
