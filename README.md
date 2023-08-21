@@ -57,6 +57,7 @@ In `Styled Components` I learned (and a bit more):
   - Passing props to styled component and using props to change css.
   - Creating theme and using its values inside a styled component css.
   - Creating styled component with html attributes.
+  - Making global style with Styled Components.
 
 I obtained theoretical knowledge of `css grid` and all of its css attributes, with some practical application of it as well.
 
