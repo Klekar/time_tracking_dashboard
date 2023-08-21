@@ -1,46 +1,74 @@
-# Getting Started with Create React App
+# Frontend Mentor - Time tracking dashboard solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Frontend Mentor - Time tracking dashboard solution](#frontend-mentor---time-tracking-dashboard-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Continued development](#continued-development)
+    - [Useful resources](#useful-resources)
+  - [Author](#author)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### The challenge
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Users should be able to:
 
-### `npm test`
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Switch between viewing Daily, Weekly, and Monthly stats
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- See loading skeletons as the page simulates loading by providing data 1-3 seconds after initial load _(My custom task)_.
 
-### `npm run build`
+### Screenshot
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![](./screenshot.jpg)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Links
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Solution URL: [https://github.com/Klekar/time_tracking_dashboard](https://github.com/Klekar/time_tracking_dashboard)
+- Live Site URL: [https://time-tracking-dashboard-klekar.vercel.app](https://time-tracking-dashboard-klekar.vercel.app)
 
-### `npm run eject`
+## My process
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Built with
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [React](https://reactjs.org/) - JS library
+- [Styled Components](https://styled-components.com/) - For styles
+- CSS Grid
+- Mobile-first workflow
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### What I learned
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+I chose this project because I wanted to learn basics of `Styled Components` and this project seemed good for that case. Also promt to use `css grid` intrigued me as well since I havn't used it yet.
 
-## Learn More
+In `Styled Components` I learned (and a bit more):
+  - Creating basic components and styling them to my needs.
+  - Creating keyframes animation and using it.
+  - Passing props to styled component and using props to change css.
+  - Creating theme and using its values inside a styled component css.
+  - Creating styled component with html attributes.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+I obtained theoretical knowledge of `css grid` and all of its css attributes, with some practical application of it as well.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Continued development
+
+- I was actually thinking about creating whole time tracking app so if I ever decide to do one, I might use, at least partially, this dashboard.
+- The relational selector :has() is not yet implemented in Firefox so I might implement a workaround for that but more likely it's a "continued developmnet" for Firefox devs :).
+
+### Useful resources
+
+- [Styled Components docs](https://styled-components.com/docs) - Since this was my first time working with Styled Components, this helped me a lot.
+
+## Author
+
+- Frontend Mentor - [@Klekar](https://www.frontendmentor.io/profile/klekar)
