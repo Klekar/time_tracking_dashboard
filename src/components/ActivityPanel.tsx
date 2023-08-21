@@ -63,7 +63,10 @@ const ActivityTitle = styled.div`
     display: inline-block;
 `
 
-const Ellipsis = styled.img`
+const Ellipsis = styled.img.attrs(() => ({
+    className: "button",
+    alt: "Ellipsis"
+}))`
     float: right;
     cursor: pointer;
     justify-self: end;
@@ -105,7 +108,7 @@ export default function ActivityPanel(props: ActivityPanelProps) {
             <ActivityTitle>
                 <SkeletonableElement>{activity?.title}</SkeletonableElement>
             </ActivityTitle>
-            <Ellipsis src={ellipsis} className="button" />
+            <Ellipsis src={ellipsis} />
             <CurrentHrs>
                 <SkeletonableElement loaded={activity !== undefined}>
                     {activity?.timeframes[timescale].current}hrs

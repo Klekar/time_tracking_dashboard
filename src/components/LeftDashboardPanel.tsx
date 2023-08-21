@@ -82,7 +82,7 @@ const TextRadioLabel = styled.label<{}>`
 `
 
 //compatibility feature for firefox, otherwise i would just use has() selector on parent
-const TextRadioText = styled.div`
+const TextRadioText = styled.span`
     color: hsl(235, 45%, 61%);
     
     input:checked ~ & {
