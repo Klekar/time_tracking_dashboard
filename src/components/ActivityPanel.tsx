@@ -4,11 +4,6 @@ import ellipsis from "../images/icon-ellipsis.svg"
 import { devices } from "../styledComponents/devices";
 import SkeletonableElement from "./SkeletonableElement";
 
-interface ActivityPanelProps {
-    activity: Activity | null,
-    timescale: Timescale
-}
-
 interface PanelProps {
     readonly $backgroundColor: string,
     readonly $backgroundIcon: string,
@@ -96,10 +91,16 @@ const LastHrs = styled.div`
     color: ${props => props.theme.colors.pale}
 `
 
-export default function ActivityPanel(props: ActivityPanelProps) {
-    const { activity, timescale, ...restProps } = props
+interface ActivityPanelProps {
+    activity: Activity | null,
+    timescale: Timescale,
+    className?: string
+}
 
-    return <div {...restProps}>
+export default function ActivityPanel(props: ActivityPanelProps) {
+    const { activity, timescale, className } = props
+
+    return <div className={className}>
         <InnerPanel>
             <ActivityTitle>
                 <SkeletonableElement>{activity?.title}</SkeletonableElement>
