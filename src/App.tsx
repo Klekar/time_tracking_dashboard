@@ -38,6 +38,7 @@ function App() {
             <GlobalStyle />
             <StyledApp>
                 <main>
+                    <h1 style={{ display: "none" }}>Time Tracking Dashboard</h1>
                     <AcivityDashboard />
                 </main>
                 <Attribution>
