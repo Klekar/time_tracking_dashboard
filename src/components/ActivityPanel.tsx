@@ -40,7 +40,7 @@ const InnerPanel = styled.div`
     background-color: hsl(235, 46%, 20%);
     border-radius: 1em;
     position: relative;
-    height: 74%;
+    height: 74.1%;
     top: 26%;
     float: left;
     width: 100%;
@@ -57,7 +57,7 @@ const InnerPanel = styled.div`
     
     @media ${devices.desktop} {
         padding: 1.8em 2em;
-        height: 82%;
+        height: 82.1%;
         top: 18%;
     }
 `
