@@ -1,7 +1,14 @@
 import React from 'react';
 import AcivityDashboard from './components/AcivityDashboard';
-import { ThemeProvider, styled } from 'styled-components';
+import { ThemeProvider, createGlobalStyle, styled } from 'styled-components';
 import { myTheme } from './styledComponents/myTheme';
+
+const GlobalStyle = createGlobalStyle`
+    body {
+        margin: 0;
+        font-family: 'Rubik';
+    }
+`
 
 const StyledApp = styled.div`
     background-color: hsl(226, 43%, 10%);
@@ -28,6 +35,7 @@ const Attribution = styled.footer`
 function App() {
     return (
         <ThemeProvider theme={myTheme}>
+            <GlobalStyle />
             <StyledApp>
                 <main>
                     <AcivityDashboard />
